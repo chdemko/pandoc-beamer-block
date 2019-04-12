@@ -40,6 +40,32 @@ def prepare(doc):
                 doc.defined.append(definition)
 
 
+def latex(elem, environment, title):
+    """
+    Generate the LaTeX code
+
+    Arguments
+    ---------
+        elem:
+            The current element
+
+        environment:
+            The environment to add
+
+        title:
+            The environment title
+
+    Returns
+    -------
+        A list of pandoc elements.
+    """
+    return [
+        RawBlock("\\begin{%s}%s" % (environment, title), "tex"),
+        elem,
+        RawBlock("\\end{%s}" % environment, "tex"),
+    ]
+
+
 def block(elem, doc):
     """
     Transform div element.
@@ -68,22 +94,10 @@ def block(elem, doc):
                     title = ""
 
                 if definition["type"] == "alert":
-                    return [
-                        RawBlock("\\begin{alertblock}%s" % title, "tex"),
-                        elem,
-                        RawBlock("\\end{alertblock}", "tex"),
-                    ]
+                    return latex(elem, "alertblock", title)
                 if definition["type"] == "example":
-                    return [
-                        RawBlock("\\begin{exampleblock}%s" % title, "tex"),
-                        elem,
-                        RawBlock("\\end{exampleblock}", "tex"),
-                    ]
-                return [
-                    RawBlock("\\begin{block}%s" % title, "tex"),
-                    elem,
-                    RawBlock("\\end{block}", "tex"),
-                ]
+                    return latex(elem, "exampleblock", title)
+                return latex(elem, "block", title)
     return None
 
 
