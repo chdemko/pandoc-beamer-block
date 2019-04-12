@@ -1,0 +1,32 @@
+---
+pandoc-beamer-block:
+  - classes: [info]
+  - classes: [alert]
+    type: alert
+---
+
+::: info :::
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur placerat, diam aliquam tincidunt placerat, ligula lorem aliquam magna,
+elementum gravida elit orci et ex. Curabitur quis vulputate quam.
+Integer a eros a lacus finibus pellentesque vel consequat dolor.
+Praesent interdum in nisl ut viverra. Maecenas sed fringilla risus.
+In gravida ultricies dictum. Pellentesque nec leo maximus nisl blandit ultrices vel
+id ligula. Sed ornare euismod nibh, tempus lobortis leo eleifend vitae.
+Donec a turpis id elit gravida cursus. Pellentesque tempor erat sed nisl
+pretium, in accumsan nulla viverra. Pellentesque vitae purus magna.
+::::::::::::
+
+--------------
+
+::: {.alert title="My Title"} :::
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur placerat, diam aliquam tincidunt placerat, ligula lorem aliquam magna,
+elementum gravida elit orci et ex. Curabitur quis vulputate quam.
+Integer a eros a lacus finibus pellentesque vel consequat dolor.
+Praesent interdum in nisl ut viverra. Maecenas sed fringilla risus.
+In gravida ultricies dictum. Pellentesque nec leo maximus nisl blandit ultrices vel
+id ligula. Sed ornare euismod nibh, tempus lobortis leo eleifend vitae.
+Donec a turpis id elit gravida cursus. Pellentesque tempor erat sed nisl
+pretium, in accumsan nulla viverra. Pellentesque vitae purus magna.
+::::::::::::

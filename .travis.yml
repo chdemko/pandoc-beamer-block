@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.6"
+install:
+  - wget https://github.com/jgm/pandoc/releases/download/2.6/pandoc-2.6-1-amd64.deb
+  - sudo dpkg -i pandoc-2.6-1-amd64.deb
+  - pandoc -v
+  - pip install -e .[test]
+  - pip install black
+  - pip install pylint
+  - pip install coverage
+  - pip install coveralls
+script:
+  - black --check pandoc_beamer_block.py setup.py tests/test_block.py
+  - pylint pandoc_beamer_block.py setup.py
+  - coverage run -a --source=pandoc_beamer_block setup.py test
+after_success:
+  - coveralls
+
