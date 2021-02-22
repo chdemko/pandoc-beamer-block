@@ -18,6 +18,7 @@
 
 import os
 import sys
+from datetime import date
 
 sys.path.insert(0, os.path.abspath("../.."))
 
@@ -26,20 +27,19 @@ on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 # -- Project information -----------------------------------------------------
 
 project = "pandoc-beamer-block"
-copyright = "2019, Christophe Demko"
+copyright = "2019-%s, Christophe Demko" % date.today().year
 author = "Christophe Demko"
-
 # The short X.Y version
 version = "0.1"
 # The full version, including alpha/beta/rc tags
-release = "0.1.1"
+release = "0.1.2"
 
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it HERE.
 #
 # needs_sphinx = '1.0'
-needs_sphinx = "2.0"
+needs_sphinx = "3.5"
 
 # Add any Sphinx extension module names HERE, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
