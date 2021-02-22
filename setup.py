@@ -6,35 +6,27 @@ https://github.com/chdemko/pandoc-beamer-block
 """
 
 # To use a consistent encoding
-from os import path
 
 # Always prefer setuptools over distutils
 from setuptools import setup
 
-HERE = path.abspath(path.dirname(__file__))
-
 # Get the long description from the README file
-try:
-    import pypandoc
-
-    LONG_DESCRIPTION = pypandoc.convert("README.md", "rst")
-except (IOError, ImportError):
-    with open(path.join(HERE, "README.md"), encoding="utf-8") as f:
-        LONG_DESCRIPTION = f.read()
+with open("README.md", "r") as stream:
+    LONG_DESCRIPTION = stream.read()
 
 setup(
     name="pandoc-beamer-block",
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version="0.1.1",
     # The project's description
     description="A pandoc filter for adding beamer block on specific div",
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     # The project's main homepage.
     url="https://github.com/chdemko/pandoc-beamer-block",
     # The project's download page
-    download_url="https://github.com/chdemko/pandoc-beamer-block/archive/master.zip",
+    download_url="https://github.com/chdemko/pandoc-beamer-block/archive/develop.zip",
     # Author details
     author="Christophe Demko",
     author_email="chdemko@gmail.com",
@@ -62,6 +54,9 @@ setup(
         # Specify the Python versions you support HERE. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         # Natural language used
         "Natural Language :: English",
     ],
@@ -80,16 +75,17 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=["panflute>=1.11", "pypandoc>=1.4"],
+    install_requires=["panflute>=2.0"],
     # List additional groups of dependencies HERE (e.g. development
     # dependencies). You can install these using the following syntax,
     # for example:
     # $ pip install -e .[dev,test]
-    extras_require={"dev": ["check-manifest"], "test": ["coverage"]},
+    extras_require={
+        "dev": ["check-manifest"],
+        "test": ["pytest-cov", "black", "pylint"],
+    },
     # If there are data files included in your packages that need to be
     # installed, specify them HERE.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={},
-    setup_requires=["pytest-runner"],
-    tests_require=["pytest", "coverage"],
 )
