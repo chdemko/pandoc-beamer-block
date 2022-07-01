@@ -4,7 +4,7 @@
 Pandoc filter for adding beamer block on specific div
 """
 
-from panflute import run_filter, Div, RawBlock
+from panflute import convert_text, run_filter, Div, RawBlock
 
 
 def prepare(doc):
@@ -59,9 +59,9 @@ def latex(elem, environment, title):
         A list of pandoc elements.
     """
     return [
-        RawBlock("\\begin{%s}%s" % (environment, title), "tex"),
+        RawBlock(f"\\begin{{{environment}}}{title}", "tex"),
         elem,
-        RawBlock("\\end{%s}" % environment, "tex"),
+        RawBlock(f"\\end{{{environment}}}", "tex"),
     ]
 
 
@@ -88,7 +88,7 @@ def block(elem, doc):
                     escaped = elem.attributes["title"].translate(
                         str.maketrans({"{": r"\{", "}": r"\}", "%": r"\%"})
                     )
-                    title = "{%s}" % escaped
+                    title = f"{{{convert_text(escaped, output_format='latex')}}}"
                 else:
                     title = ""
 

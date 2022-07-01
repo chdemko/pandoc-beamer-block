@@ -100,3 +100,24 @@ pandoc-beamer-block:
         )
         self.assertIn("\\begin{exampleblock}", text)
         self.assertIn("\\end{exampleblock}", text)
+
+    def test_title_complex(self):
+        doc = BlockTest.conversion(
+            """
+---
+pandoc-beamer-block:
+  - classes: ['class1', 'class2']
+---
+::: {.class1 .class2 title="**My Title**"}
+:::
+            """,
+            "beamer",
+        )
+        text = convert_text(
+            doc,
+            input_format="panflute",
+            output_format="latex",
+            extra_args=["--wrap=none"],
+        )
+        self.assertIn("\\begin{block}{\\textbf{My Title}}", text)
+        self.assertIn("\\end{block}", text)

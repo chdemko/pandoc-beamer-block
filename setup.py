@@ -11,7 +11,7 @@ https://github.com/chdemko/pandoc-beamer-block
 from setuptools import setup
 
 # Get the long description from the README file
-with open("README.md", "r") as stream:
+with open("README.md", "r", encoding="utf-8") as stream:
     LONG_DESCRIPTION = stream.read()
 
 setup(
