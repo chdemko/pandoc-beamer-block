@@ -1,5 +1,5 @@
 # pandoc-beamer-block
-[![Build Status](https://img.shields.io/travis/chdemko/pandoc-beamer-block/develop.svg?logo=travis)](https://travis-ci.org/chdemko/pandoc-beamer-block/branches)
+![Python package](https://github.com/chdemko/pandoc-beamer-block/workflows/Python%20package/badge.svg?branch=develop)
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-beamer-block/develop.svg?logo=Codecov&logoColor=white)](https://coveralls.io/github/chdemko/pandoc-beamer-block?branch=develop)
 [![Code Climate](https://codeclimate.com/github/chdemko/pandoc-beamer-block/badges/gpa.svg)](https://codeclimate.com/github/chdemko/pandoc-beamer-block/)
 [![Code Beat](https://codebeat.co/badges/cb5538dc-f30b-4ac4-abf6-3c213682c54d)](https://codebeat.co/projects/github-com-chdemko-pandoc-beamer-block-develop/)
