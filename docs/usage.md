@@ -14,12 +14,12 @@ decorate `div` elements by blocks
 The metadata block add information using the `pandoc-beamer-block` entry
 by a list of definitions:
 
-``` yaml
+~~~yaml
 pandoc-beamer-block:
   - classes: [info]
   - classes: [alert]
     type: alert
-```
+~~~
 
 The metadata block above is used to add a `block` environment around
 `div`s which have `info` class and a `alertblock` environment to `div`s
@@ -27,9 +27,9 @@ that have only a `alert` class.
 
 Each entry of `pandoc-beamer-block` is a YAML dictionary containing:
 
-- `classes`: the set of classes of the `div`s to which the
+* `classes`: the set of classes of the `div`s to which the
   transformation will be applied. This parameter is mandatory.
-- `type`: the block type (either `alert`, `example` or `info`)
+* `type`: the block type (either `alert`, `example` or `info`)
 
 ## Example
 
@@ -38,11 +38,11 @@ Demonstration: Using
 as input gives output file in
 [pandoc-beamer-block-sample.pdf](https://raw.githubusercontent.com/chdemko/pandoc-beamer-block/develop/docs/images/pandoc-beamer-block-sample.pdf).
 
-``` console
+~~~shell
 $ pandoc \
     -t beamer \
     -V theme:Warsaw \
     --filter pandoc-beamer-block \
     -o docs/images/pandoc-beamer-block-sample.pdf \
     docs/images/pandoc-beamer-block-sample.txt
-```
+~~~
