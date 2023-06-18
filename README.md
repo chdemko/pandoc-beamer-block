@@ -1,5 +1,6 @@
 # Installation
-![Python package](https://github.com/chdemko/pandoc-beamer-block/workflows/Python%20package/badge.svg?branch=develop)
+
+[![Python package](https://github.com/chdemko/pandoc-beamer-block/workflows/Python%20package/badge.svg?branch=develop)](https://github.com/chdemko/pandoc-beamer-block/actions/workflows/python-package.yml)
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-beamer-block/develop.svg?logo=Codecov&logoColor=white)](https://coveralls.io/github/chdemko/pandoc-beamer-block?branch=develop)
 [![Code Climate](https://codeclimate.com/github/chdemko/pandoc-beamer-block/badges/gpa.svg)](https://codeclimate.com/github/chdemko/pandoc-beamer-block/)
 [![Code Beat](https://codebeat.co/badges/cb5538dc-f30b-4ac4-abf6-3c213682c54d)](https://codebeat.co/projects/github-com-chdemko-pandoc-beamer-block-develop/)
@@ -46,7 +47,6 @@ $ pip install --upgrade --force git+https://github.com/chdemko/pandoc-beamer-blo
 `pip` is a script that downloads and installs modules from the Python Package Index, [PyPI].  It should come installed with your python distribution. If you are running linux, `pip` may be bundled separately. On a Debian-based system (including Ubuntu), you can install it as root using
 
 ~~~shell
-$ sudo apt-get update
 $ sudo apt-get install python3-pip
 ~~~
 
