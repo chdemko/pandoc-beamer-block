@@ -1,4 +1,4 @@
-# pandoc-beamer-block
+# Installation
 ![Python package](https://github.com/chdemko/pandoc-beamer-block/workflows/Python%20package/badge.svg?branch=develop)
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-beamer-block/develop.svg?logo=Codecov&logoColor=white)](https://coveralls.io/github/chdemko/pandoc-beamer-block?branch=develop)
 [![Code Climate](https://codeclimate.com/github/chdemko/pandoc-beamer-block/badges/gpa.svg)](https://codeclimate.com/github/chdemko/pandoc-beamer-block/)
@@ -18,24 +18,12 @@
 
 [pandoc]: http://pandoc.org/
 
-Documentation
--------------
-
-See the [Read the docs pages](http://pandoc-beamer-block.readthedocs.io/en/latest/).
-
-Usage
------
-
-To apply the filter, use the following option with pandoc:
-
-    --filter pandoc-beamer-block
-
-Installation
+Instructions
 ------------
 
-*pandoc-beamer-block* requires [python 3.6], a programming language that comes pre-installed on linux and Mac OS X, and which is easily installed [on Windows].
+*pandoc-beamer-block* requires [python], a programming language that comes pre-installed on linux and Mac OS X, and which is easily installed [on Windows].
 
-Install *pandoc-beamer-block* as root using the bash command
+Install *pandoc-beamer-block* using the bash command
 
     pip install pandoc-beamer-block
 
@@ -50,9 +38,9 @@ To upgrade to the current code, use
 `pip` is a script that downloads and installs modules from the Python Package Index, [PyPI].  It should come installed with your python distribution. If you are running linux, `pip` may be bundled separately. On a Debian-based system (including Ubuntu), you can install it as root using
 
     apt-get update
-    apt-get install python-pip
+    apt-get install python3-pip
 
-[python 3.6]: https://www.python.org
+[python]: https://www.python.org
 [on Windows]: https://www.python.org/downloads/windows
 [PyPI]: https://pypi.org
 
