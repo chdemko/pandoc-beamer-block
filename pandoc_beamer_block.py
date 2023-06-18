@@ -1,22 +1,21 @@
 #!/usr/bin/env python
 
 """
-Pandoc filter for adding beamer block on specific div
+Pandoc filter for adding beamer block on specific div.
 """
 
-from panflute import convert_text, run_filter, Div, RawBlock
+from panflute import Div, RawBlock, convert_text, run_filter  # type: ignore
 
 
 def prepare(doc):
     """
-    Prepare the document
+    Prepare the document.
 
     Arguments
     ---------
-        doc:
-            The pandoc document
+    doc
+        The pandoc document
     """
-
     # Prepare the definitions
     doc.defined = []
 
@@ -24,10 +23,8 @@ def prepare(doc):
     meta = doc.get_metadata("pandoc-beamer-block")
 
     if isinstance(meta, list):
-
         # Loop on all definitions
         for definition in meta:
-
             # Verify the definition
             if (
                 isinstance(definition, dict)
@@ -41,18 +38,18 @@ def prepare(doc):
 
 def latex(elem, environment, title):
     """
-    Generate the LaTeX code
+    Generate the LaTeX code.
 
     Arguments
     ---------
-        elem:
-            The current element
+    elem
+        The current element
 
-        environment:
-            The environment to add
+    environment
+        The environment to add
 
-        title:
-            The environment title
+    title
+        The environment title
 
     Returns
     -------
@@ -71,17 +68,20 @@ def block(elem, doc):
 
     Arguments
     ---------
-        elem:
-            current element
-        doc:
-            pandoc document
+    elem
+        current element
+    doc
+        pandoc document
+
+    Returns
+    -------
+        A list of pandoc elements or None.
     """
     if doc.format == "beamer" and isinstance(elem, Div):
         classes = frozenset(elem.classes)
 
         # Loop on all fontsize definition
         for definition in doc.defined:
-
             # Are the classes correct?
             if classes >= definition["classes"]:
                 if "title" in elem.attributes:
@@ -102,12 +102,16 @@ def block(elem, doc):
 
 def main(doc=None):
     """
-    main function.
+    Convert the pandoc document.
 
     Arguments
     ---------
-        doc:
-            pandoc document
+    doc
+        pandoc document
+
+    Returns
+    -------
+        The modified pandoc document.
     """
     return run_filter(block, doc=doc, prepare=prepare)
 
