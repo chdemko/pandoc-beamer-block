@@ -33,9 +33,10 @@ Each entry of `pandoc-beamer-block` is a YAML dictionary containing:
 
 ## Example
 
-Demonstration: Using :download:\`pandoc-beamer-block-sample.txt
-\<images/pandoc-beamer-block-sample.txt\>[ as input gives output file in
-:download:\`pdf \<images/pandoc-beamer-block-sample.pdf\>]{.title-ref}.
+Demonstration: Using
+[pandoc-beamer-block-sample.txt](https://raw.githubusercontent.com/chdemko/pandoc-beamer-block/develop/docs/images/pandoc-beamer-block-sample.txt)
+as input gives output file in
+[pandoc-beamer-block-sample.pdf](https://raw.githubusercontent.com/chdemko/pandoc-beamer-block/develop/docs/images/pandoc-beamer-block-sample.pdf).
 
 ``` console
 $ pandoc \
