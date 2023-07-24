@@ -114,6 +114,7 @@ def block(elem, doc):
                     return latex(elem, "exampleblock", title)
                 if definition["type"] in (
                     "theorem",
+                    "proof",
                     "corollary",
                     "definition",
                     "lemma",
