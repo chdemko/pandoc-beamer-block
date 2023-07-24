@@ -57,6 +57,28 @@ pandoc-beamer-block:
         self.assertIn("\\begin{block}{My Title}", text)
         self.assertIn("\\end{block}", text)
 
+    def test_theorem(self):
+        doc = BlockTest.conversion(
+            """
+---
+pandoc-beamer-block:
+  - classes: ['theorem']
+    type: theorem
+---
+::: {.theorem title="My Title"}
+:::
+            """,
+            "beamer",
+        )
+        text = convert_text(
+            doc,
+            input_format="panflute",
+            output_format="latex",
+            extra_args=["--wrap=none"],
+        )
+        self.assertIn("\\begin{theorem}[My Title]", text)
+        self.assertIn("\\end{theorem}", text)
+
     def test_alert(self):
         doc = BlockTest.conversion(
             """

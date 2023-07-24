@@ -1,8 +1,14 @@
 ---
 pandoc-beamer-block:
   - classes: [info]
+  - classes: [theorem]
+    type: theorem
   - classes: [alert]
     type: alert
+  - classes: [corollary]
+    type: corollary
+  - classes: [lemma]
+    type: lemma
 ---
 
 ::: info :::
@@ -19,9 +25,17 @@ Donec a turpis id elit gravida cursus. Pellentesque tempor erat sed nisl
 pretium, in accumsan nulla viverra. Pellentesque vitae purus magna.
 ::::::::::::
 
+. . .
+
+::: theorem :::
+**Lorem ipsum dolor** sit amet, consectetur adipiscing elit.
+Curabitur placerat, diam aliquam tincidunt placerat,
+ligula lorem aliquam magna,
+::::::::::::
+
 --------------
 
-::: {.alert title="My Title"} :::
+::: {.alert title="My Title with special LaTeX characters { } %"} :::
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Curabitur placerat, diam aliquam tincidunt placerat,
 ligula lorem aliquam magna,
@@ -34,3 +48,21 @@ id ligula. Sed ornare euismod nibh, tempus lobortis leo eleifend vitae.
 Donec a turpis id elit gravida cursus. Pellentesque tempor erat sed nisl
 pretium, in accumsan nulla viverra. Pellentesque vitae purus magna.
 ::::::::::::
+
+. . .
+
+::: {.corollary title="$\sum_{i=1}^n f(i)$"} :::
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur placerat, diam aliquam tincidunt placerat,
+ligula lorem aliquam magna,
+::::::::::::
+
+--------------
+
+::: {.lemma title="Simple"} :::
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Curabitur placerat, diam aliquam tincidunt placerat,
+ligula lorem aliquam magna,
+::::::::::::
+
+
