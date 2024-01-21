@@ -16,8 +16,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import importlib.metadata
 import os
 import sys
+
+from datetime import date
 
 sys.path.insert(0, os.path.abspath("../.."))
 
@@ -25,15 +28,13 @@ on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 # -- Project information -----------------------------------------------------
 
-project = "pandoc-beamer-block"
-copyright = "2018-2023, Christophe Demko"
-author = "Christophe Demko"
+project, release = os.popen("poetry version").readline().strip().split(" ")
+author = importlib.metadata.metadata(project)["Author"]
+year = date.today().year
+copyright = f"2018-{year}, {author}"
 
 # The short X.Y version
-version = "1.0"
-# The full version, including alpha/beta/rc tags
-release = "1.0.0.0"
-
+version = ".".join(release.split(".")[:2])
 
 # -- General configuration ---------------------------------------------------
 
@@ -85,11 +86,8 @@ pygments_style = "sphinx"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
 
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
