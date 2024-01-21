@@ -4,7 +4,7 @@
 Pandoc filter for adding beamer block on specific div.
 """
 
-from panflute import Div, RawBlock, convert_text, run_filter  # type: ignore
+from panflute import Div, RawBlock, convert_text, run_filter
 
 
 def prepare(doc):
