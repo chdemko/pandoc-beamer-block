@@ -29,7 +29,8 @@ Each entry of `pandoc-beamer-block` is a YAML dictionary containing:
 
 * `classes`: the set of classes of the `div`s to which the
   transformation will be applied. This parameter is mandatory.
-* `type`: the block type (either `alert`, `example` or `info`)
+* `type`: the block type (either `alert`, `example`, `info`, `theorem`,
+  `proof`, `corollary`, `definition`, `lemma` and `fact`)
 
 ## Example
 

@@ -4,7 +4,7 @@
 Pandoc filter for adding beamer block on specific div.
 """
 
-from panflute import Div, RawBlock, convert_text, run_filter  # type: ignore
+from panflute import Div, RawBlock, convert_text, run_filter
 
 
 def prepare(doc):
@@ -36,7 +36,7 @@ def prepare(doc):
                 doc.defined.append(definition)
 
 
-def latex(elem, environment, title):
+def latex(elem, environment, title, optional=False):
     """
     Generate the LaTeX code.
 
@@ -51,17 +51,33 @@ def latex(elem, environment, title):
     title
         The environment title
 
+    optional
+        The title optionality
+
     Returns
     -------
         A list of pandoc elements.
     """
+    if optional:
+        if title:
+            return [
+                RawBlock(f"\\begin{{{environment}}}[{title}]", "tex"),
+                elem,
+                RawBlock(f"\\end{{{environment}}}", "tex"),
+            ]
+        return [
+            RawBlock(f"\\begin{{{environment}}}", "tex"),
+            elem,
+            RawBlock(f"\\end{{{environment}}}", "tex"),
+        ]
     return [
-        RawBlock(f"\\begin{{{environment}}}{title}", "tex"),
+        RawBlock(f"\\begin{{{environment}}}{{{title}}}", "tex"),
         elem,
         RawBlock(f"\\end{{{environment}}}", "tex"),
     ]
 
 
+# pylint: disable=too-many-return-statements
 def block(elem, doc):
     """
     Transform div element.
@@ -85,10 +101,10 @@ def block(elem, doc):
             # Are the classes correct?
             if classes >= definition["classes"]:
                 if "title" in elem.attributes:
-                    escaped = elem.attributes["title"].translate(
-                        str.maketrans({"{": r"\{", "}": r"\}", "%": r"\%"})
+                    title = convert_text(
+                        elem.attributes["title"],
+                        output_format="latex",
                     )
-                    title = f"{{{convert_text(escaped, output_format='latex')}}}"
                 else:
                     title = ""
 
@@ -96,6 +112,15 @@ def block(elem, doc):
                     return latex(elem, "alertblock", title)
                 if definition["type"] == "example":
                     return latex(elem, "exampleblock", title)
+                if definition["type"] in (
+                    "theorem",
+                    "proof",
+                    "corollary",
+                    "definition",
+                    "lemma",
+                    "fact",
+                ):
+                    return latex(elem, definition["type"], title, True)
                 return latex(elem, "block", title)
     return None
 
