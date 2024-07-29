@@ -4,10 +4,10 @@
 Pandoc filter for adding beamer block on specific div.
 """
 
-from panflute import Div, RawBlock, convert_text, run_filter
+from panflute import Div, Doc, Element, RawBlock, convert_text, run_filter
 
 
-def prepare(doc):
+def prepare(doc: Doc):
     """
     Prepare the document.
 
@@ -36,7 +36,9 @@ def prepare(doc):
                 doc.defined.append(definition)
 
 
-def latex(elem, environment, title, optional=False):
+def latex(
+    elem: Element, environment: str, title: str, optional: bool = False
+) -> list[Element]:
     """
     Generate the LaTeX code.
 
@@ -56,6 +58,7 @@ def latex(elem, environment, title, optional=False):
 
     Returns
     -------
+    list[Element]
         A list of pandoc elements.
     """
     if optional:
@@ -78,7 +81,7 @@ def latex(elem, environment, title, optional=False):
 
 
 # pylint: disable=too-many-return-statements
-def block(elem, doc):
+def block(elem: Element, doc: Doc) -> list[Element] | None:
     """
     Transform div element.
 
@@ -91,6 +94,7 @@ def block(elem, doc):
 
     Returns
     -------
+    list[Element] | None
         A list of pandoc elements or None.
     """
     if doc.format == "beamer" and isinstance(elem, Div):
@@ -125,7 +129,7 @@ def block(elem, doc):
     return None
 
 
-def main(doc=None):
+def main(doc: Doc | None = None) -> Doc:
     """
     Convert the pandoc document.
 
@@ -136,6 +140,7 @@ def main(doc=None):
 
     Returns
     -------
+    Doc
         The modified pandoc document.
     """
     return run_filter(block, doc=doc, prepare=prepare)
