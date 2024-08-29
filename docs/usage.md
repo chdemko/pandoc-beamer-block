@@ -2,8 +2,8 @@
 
 To apply the filter, use the following option with pandoc:
 
-~~~{prompt} bash
-pandoc --filter pandoc-beamer-block
+~~~shell-session
+$ pandoc --filter pandoc-beamer-block
 ~~~
 
 ## Explanation
@@ -39,8 +39,8 @@ Demonstration: Using
 as input gives output file in
 [pandoc-beamer-block-sample.pdf](https://raw.githubusercontent.com/chdemko/pandoc-beamer-block/develop/docs/images/pandoc-beamer-block-sample.pdf).
 
-~~~{prompt} bash
-pandoc \
+~~~shell-session
+$ pandoc \
     -t beamer \
     -V theme:Warsaw \
     --filter pandoc-beamer-block \
