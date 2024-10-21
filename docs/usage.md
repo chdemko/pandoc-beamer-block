@@ -2,7 +2,7 @@
 
 To apply the filter, use the following option with pandoc:
 
-~~~shell
+~~~shell-session
 $ pandoc --filter pandoc-beamer-block
 ~~~
 
@@ -39,7 +39,7 @@ Demonstration: Using
 as input gives output file in
 [pandoc-beamer-block-sample.pdf](https://raw.githubusercontent.com/chdemko/pandoc-beamer-block/develop/docs/images/pandoc-beamer-block-sample.pdf).
 
-~~~shell
+~~~shell-session
 $ pandoc \
     -t beamer \
     -V theme:Warsaw \
