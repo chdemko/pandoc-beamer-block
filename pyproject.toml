@@ -151,6 +151,7 @@ pythonpath = ["src"]
 [tool.ruff]
 # Allow lines to be as long as 88.
 line-length = 88
+target-version = "py310"
 
 [tool.flake8]
 # flake8-docstrings
