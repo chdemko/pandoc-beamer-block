@@ -33,6 +33,7 @@ def prepare(doc: Doc):
             ):
                 definition["classes"] = frozenset(definition["classes"])
                 definition["type"] = definition.get("type", "info")
+                definition["title"] = definition.get("title", "")
                 doc.defined.append(definition)
 
 
@@ -110,7 +111,7 @@ def block(elem: Element, doc: Doc) -> list[Element] | None:
                         output_format="latex",
                     )
                 else:
-                    title = ""
+                    title = definition["title"]
 
                 if definition["type"] == "alert":
                     return latex(elem, "alertblock", title)
