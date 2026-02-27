@@ -7,7 +7,7 @@ Installation
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://pypi.org/project/black/)
 [![Coveralls](https://img.shields.io/coveralls/github/chdemko/pandoc-beamer-block/develop.svg?logo=Codecov&logoColor=white)](https://coveralls.io/github/chdemko/pandoc-beamer-block?branch=develop)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/chdemko/pandoc-beamer-block.svg?logo=scrutinizer)](https://scrutinizer-ci.com/g/chdemko/pandoc-beamer-block/)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/chdemko/pandoc-beamer-block?logo=codeclimate&barnch=develop)](https://codeclimate.com/github/chdemko/pandoc-beamer-block/)
+[![Maintainability](https://qlty.sh/gh/chdemko/projects/pandoc-beamer-block/maintainability.svg)](https://qlty.sh/gh/chdemko/projects/pandoc-beamer-block)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/chdemko/pandoc-beamer-block/develop.svg?logo=codefactor)](https://www.codefactor.io/repository/github/chdemko/pandoc-beamer-block)
 [![Codacy](https://img.shields.io/codacy/grade/af5a670790264990811713280a8f8dcf.svg?logo=codacy&logoColor=white)](https://app.codacy.com/gh/chdemko/pandoc-beamer-block/dashboard)
 [![PyPI version](https://img.shields.io/pypi/v/pandoc-beamer-block.svg?logo=pypi&logoColor=white)](https://pypi.org/project/pandoc-beamer-block/)

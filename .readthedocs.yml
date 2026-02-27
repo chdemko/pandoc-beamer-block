@@ -11,7 +11,7 @@ build:
     python: '3.11'
   commands:
   - git fetch --unshallow || true
-  - pip install hatch
+  - pip install hatch "virtualenv<21"
   - hatch run docs:build $READTHEDOCS_OUTPUT/html/
 
 # Optionally build your docs in additional formats such as PDF and ePub
