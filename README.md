@@ -16,7 +16,7 @@ Installation
 [![Downloads](https://img.shields.io/pypi/dm/pandoc-beamer-block?logo=pypi&logoColor=white)](https://pepy.tech/project/pandoc-beamer-block)
 [![Development Status](https://img.shields.io/pypi/status/pandoc-beamer-block.svg?logo=pypi&logoColor=white)](https://pypi.org/project/pandoc-beamer-block/)
 [![Python version](https://img.shields.io/pypi/pyversions/pandoc-beamer-block.svg?logo=Python&logoColor=white)](https://pypi.org/project/pandoc-beamer-block/)
-[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20..%203.6-blue.svg?logo=markdown)](https://pandoc.org/)
+[![Pandoc version](https://img.shields.io/badge/pandoc-2.11%20..%203.9-blue.svg?logo=markdown)](https://pandoc.org/)
 [![Latest release](https://img.shields.io/github/release-date/chdemko/pandoc-beamer-block.svg?logo=github)](https://github.com/chdemko/pandoc-beamer-block/releases)
 [![Last commit](https://img.shields.io/github/last-commit/chdemko/pandoc-beamer-block/develop?logo=github)](https://github.com/chdemko/pandoc-beamer-block/commit/develop/)
 [![Repo Size](https://img.shields.io/github/repo-size/chdemko/pandoc-beamer-block.svg?logo=github)](http://pandoc-beamer-block.readthedocs.io/en/latest/)
