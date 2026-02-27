@@ -127,6 +127,7 @@ pandoc-beamer-block:
 ---
 pandoc-beamer-block:
   - classes: ['class1', 'class2']
+    title: Ignored
 ---
 ::: {.class1 .class2 title="**My Title**"}
 :::
@@ -140,4 +141,26 @@ pandoc-beamer-block:
             extra_args=["--wrap=none"],
         )
         self.assertIn("\\begin{block}{\\textbf{My Title}}", text)
+        self.assertIn("\\end{block}", text)
+
+    def test_title_default(self):
+        doc = BlockTest.conversion(
+            """
+---
+pandoc-beamer-block:
+  - classes: ['class1']
+    title: My Title
+---
+::: class1 :::
+:::
+            """,
+            "beamer",
+        )
+        text = convert_text(
+            doc,
+            input_format="panflute",
+            output_format="latex",
+            extra_args=["--wrap=none"],
+        )
+        self.assertIn("\\begin{block}{My Title}", text)
         self.assertIn("\\end{block}", text)

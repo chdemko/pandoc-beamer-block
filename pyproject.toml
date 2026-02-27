@@ -7,7 +7,7 @@ dynamic = ["version"]
 name = "pandoc-beamer-block"
 description = "A pandoc filter for adding beamer block on specific div"
 readme = "README.md"
-requires-python = ">=3.10,<3.14"
+requires-python = ">=3.11,<3.15"
 license = {text = "BSD-3-Clause"}
 license-files = {paths = ["LICENSE"]}
 authors = [{name = "Christophe Demko", email = "chdemko@gmail.com"}]
@@ -31,10 +31,10 @@ classifiers = [
   "Topic :: Text Processing :: Filters",
   # Specify the Python versions you support here. In particular, ensure
   # that you indicate whether you support Python 2, Python 3 or both.
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   # Natural language used
   "Natural Language :: English"
 ]
@@ -62,45 +62,20 @@ local_scheme = "no-local-version"
 packages = ["src/pandoc_beamer_block"]
 
 [[tool.hatch.envs.hatch-test.matrix]]
-python = ["3.10", "3.11", "3.12", "3.13"]
+python = ["3.11", "3.12", "3.13", "3.14"]
 
 [tool.hatch.envs.hatch-static-analysis]
 dependencies = [
   # Types
   "types-PyYAML~=6.0",
   # Formatter
-  "black[jupyter]~=24.10",
+  "black[jupyter]~=26.1",
   # Style checkers
-  "doc8~=1.1",
-  "mypy~=1.13",
-  "flake8~=7.1",
-  "flake8-pyproject~=1.2",
-  "flake8-annotations-complexity~=0.0",
-  "flake8-black~=0.3",
-  "flake8-blind-except~=0.2",
-  "flake8-bugbear~=24.8",
-  "flake8-builtins~=2.5",
-  "flake8-cognitive-complexity~=0.1",
-  "flake8-comprehensions~=3.15",
-  "flake8-docstrings~=1.7",
-  "flake8-expression-complexity~=0.0",
-  "flake8-fixme~=1.1",
-  "flake8-functions~=0.0",
-  "flake8-import-order~=0.18",
-  "flake8-mypy~=17.8",
-  "flake8-pyi~=24.9",
-  "flake8-pydocstyle~=0.2",
-  "flake8-return~=1.2",
-  "flake8-simplify~=0.21",
-  "flake8-spellcheck~=0.28",
-  "flake8-use-fstring~=1.4",
-  "flake8-variables-names~=0.0",
-  "pep8-naming~=0.14",
-  "darglint~=1.8.1",
-  "pydoclint[flake8]~=0.5",
+  "doc8~=2.0",
+  "mypy~=1.19",
   "teyit~=0.4",
-  "refurb~=2.0",
-  "ruff~=0.7"
+  "refurb~=2.3",
+  "ruff~=0.15"
 ]
 
 [tool.hatch.envs.hatch-static-analysis.scripts]
@@ -114,8 +89,7 @@ format-fix = [
 lint-check = [
   "refurb {args:src docs}",
   "ruff check {args:src docs}",
-  "teyit --show-stats --fail-on-change {args:tests}",
-  "flake8 {args:src docs}"
+  "teyit --show-stats --fail-on-change {args:tests}"
 ]
 lint-fix = [
   "ruff check --fix {args:src docs}"
@@ -124,7 +98,7 @@ lint-fix = [
 [tool.hatch.envs.lint]
 dependencies = [
   "slotscheck~=0.19",
-  "pylint~=3.3"
+  "pylint~=4.0"
 ]
 
 [tool.hatch.envs.lint.scripts]
@@ -135,9 +109,9 @@ check = [
 
 [tool.hatch.envs.docs]
 dependencies = [
-  "myst-parser~=4.0",
-  "Sphinx~=8.1",
-  "sphinx-rtd-theme~=3.0",
+  "myst-parser~=5.0",
+  "Sphinx~=9.1",
+  "sphinx-rtd-theme~=3.1",
   "sphinx-copybutton~=0.5"
 ]
 
