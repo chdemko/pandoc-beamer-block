@@ -80,7 +80,7 @@ dependencies = [
 
 [tool.hatch.envs.hatch-static-analysis.scripts]
 format-check = [
-  "black --check --diff {args:src docs}",
+  "black --check --diff {args:src docs tests}",
   "doc8 -q {args:docs README.md} -e .rst -e .md"
 ]
 format-fix = [
@@ -88,11 +88,11 @@ format-fix = [
 ]
 lint-check = [
   "refurb {args:src docs}",
-  "ruff check {args:src docs}",
+  "ruff check {args:src docs tests}",
   "teyit --show-stats --fail-on-change {args:tests}"
 ]
 lint-fix = [
-  "ruff check --fix {args:src docs}"
+  "ruff check --fix {args:src docs tests}"
 ]
 
 [tool.hatch.envs.lint]

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from panflute import convert_text, Para, Image
+from panflute import convert_text
 
 import pandoc_beamer_block
 
