@@ -103,4 +103,4 @@ jobs:
       run: |
         hatch test --cover
         hatch run pip install coveralls
-        # hatch run coveralls
+        hatch run coveralls
