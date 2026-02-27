@@ -19,6 +19,7 @@ pandoc-beamer-block:
   - classes: [info]
   - classes: [alert]
     type: alert
+    title: Danger
 ~~~
 
 The metadata block above is used to add a `block` environment around
@@ -31,6 +32,7 @@ Each entry of `pandoc-beamer-block` is a YAML dictionary containing:
   transformation will be applied. This parameter is mandatory.
 * `type`: the block type (either `alert`, `example`, `info`, `theorem`,
   `proof`, `corollary`, `definition`, `lemma` and `fact`)
+* `title`: an optional default title to use
 
 ## Example
 
