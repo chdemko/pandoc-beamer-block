@@ -24,8 +24,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Hatch
       run: pipx install hatch
-    - name: Patch virtualenv
-      run: pipx inject --force hatch "virtualenv<21"
     - name: Install dependencies
       run: |
         wget https://github.com/jgm/pandoc/releases/download/${{ matrix.pandoc-version }}/pandoc-${{ matrix.pandoc-version }}-1-amd64.deb
@@ -48,8 +46,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Hatch
       run: pipx install hatch
-    - name: Patch virtualenv
-      run: pipx inject --force hatch "virtualenv<21"
     - name: Install dependencies
       run: |
         wget https://github.com/jgm/pandoc/releases/download/${{ matrix.pandoc-version }}/pandoc-${{ matrix.pandoc-version }}-1-amd64.deb
@@ -72,8 +68,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Hatch
       run: pipx install hatch
-    - name: Patch virtualenv
-      run: pipx inject --force hatch "virtualenv<21"
     - name: Install dependencies
       run: |
         wget https://github.com/jgm/pandoc/releases/download/${{ matrix.pandoc-version }}/pandoc-${{ matrix.pandoc-version }}-1-amd64.deb
@@ -99,8 +93,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Hatch
       run: pipx install hatch
-    - name: Patch virtualenv
-      run: pipx inject --force hatch "virtualenv<21"
     - name: Install dependencies
       run: |
         wget https://github.com/jgm/pandoc/releases/download/${{ matrix.pandoc-version }}/pandoc-${{ matrix.pandoc-version }}-1-amd64.deb
